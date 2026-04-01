@@ -68,3 +68,11 @@ This project demonstrates strong problem-solving skills, attention to user exper
 
 **Live Demo**: https://ashwini-hosamani.github.io/INTERACTIVE-QUIZ-APPLICATION/  
 **GitHub Repository**: https://github.com/ashwini-hosamani/INTERACTIVE-QUIZ-APPLICATION
+
+
+##OUTPUT 
+
+<img width="1184" height="626" alt="Image" src="https://github.com/user-attachments/assets/a4611f4c-9d19-4d25-bde6-82dff29e9cf0" />
+<img width="1173" height="617" alt="Image" src="https://github.com/user-attachments/assets/a8000e77-f5e0-4238-bacf-348073e5b1a9" />
+<img width="1191" height="607" alt="Image" src="https://github.com/user-attachments/assets/a5466e98-7935-4c4c-864a-9ce448b37df5" />
+<img width="1288" height="624" alt="Image" src="https://github.com/user-attachments/assets/ebcf095d-064d-4209-991f-1f79c4a0213d" />
