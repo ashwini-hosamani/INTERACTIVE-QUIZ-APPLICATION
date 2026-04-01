@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuminaQuest - An interactive, voice-enabled quiz app built with pure HTML, CSS & JavaScript">
+    <title>LuminaQuest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <h1>LuminaQuest</h1>
+        </div>
+        
+        <nav class="nav">
+            <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">
+                <span id="theme-icon">☀️</span>
+            </button>
+            <button id="restart-btn" class="nav-btn hidden" onclick="restartApp()">New Quiz</button>
+        </nav>
+    </header>
+
+    <!-- HOME SCREEN -->
+    <main id="home-screen">
+        <div class="hero">
+            <h1 class="hero-title">Ignite Your Mind</h1>
+            <p class="hero-subtitle">Choose a domain. Test your knowledge. Master the unknown.</p>
+            <div class="category-grid" id="category-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- DIFFICULTY SCREEN -->
+    <main id="difficulty-screen" class="screen hidden">
+        <div class="difficulty-container">
+            <button class="back-btn" onclick="goBackToHome()">← Back</button>
+            <h2 class="screen-title">Select Difficulty for <span id="selected-category-display" class="category-name"></span></h2>
+            
+            <div class="difficulty-grid">
+                <div class="difficulty-card" onclick="startQuiz('Easy')">
+                    <div class="difficulty-badge easy">EASY</div>
+                    <h3>30 seconds per question</h3>
+                    <p>Perfect for beginners</p>
+                </div>
+                <div class="difficulty-card" onclick="startQuiz('Medium')">
+                    <div class="difficulty-badge medium">MEDIUM</div>
+                    <h3>45 seconds per question</h3>
+                    <p>Balanced challenge</p>
+                </div>
+                <div class="difficulty-card" onclick="startQuiz('Hard')">
+                    <div class="difficulty-badge hard">HARD</div>
+                    <h3>60 seconds per question</h3>
+                    <p>For true masters</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- QUIZ SCREEN -->
+    <main id="quiz-screen" class="screen hidden">
+        <div class="quiz-header">
+            <div class="quiz-info">
+                <span id="quiz-category" class="badge"></span>
+                <span id="quiz-difficulty" class="badge"></span>
+                <span id="question-counter" class="counter">1 of 10</span>
+            </div>
+            
+            <!-- TIMER -->
+            <div class="timer-container">
+                <div class="timer-label">Time left</div>
+                <div id="timer" class="timer">30</div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <!-- Voice button -->
+            <button id="voice-btn" class="voice-btn" onclick="speakQuestion()" title="Read question aloud">
+                🔊
+            </button>
+        </div>
+
+        <!-- Question -->
+        <div class="question-container">
+            <h2 id="question-text" class="question-text"></h2>
+            
+            <!-- Options -->
+            <div id="options-container" class="options-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Feedback -->
+        <div id="feedback" class="feedback hidden">
+            <div id="feedback-icon" class="feedback-icon"></div>
+            <p id="feedback-text" class="feedback-text"></p>
+        </div>
+
+        <!-- Next button -->
+        <button id="next-btn" class="next-btn hidden" onclick="nextQuestion()">
+            Next Question →
+        </button>
+    </main>
+
+    <!-- RESULT SCREEN -->
+    <main id="result-screen" class="screen hidden">
+        <div class="result-container">
+            <h1 class="result-title">Quiz Complete!</h1>
+            
+            <div class="score-circle">
+                <div class="score-inner">
+                    <span id="score-percentage" class="percentage">85</span>
+                    <span class="score-label">SCORE</span>
+                </div>
+            </div>
+            
+            <div class="result-stats">
+                <div class="stat">
+                    <span id="final-score" class="stat-value">8</span>
+                    <span class="stat-label">Correct</span>
+                </div>
+                <div class="stat">
+                    <span id="total-questions" class="stat-value">10</span>
+                    <span class="stat-label">Questions</span>
+                </div>
+                <div class="stat">
+                    <span id="accuracy" class="stat-value">80%</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+            </div>
+            
+            <p id="result-message" class="result-message">Outstanding performance!</p>
+            
+            <div class="result-actions">
+                <button onclick="restartSameQuiz()" class="btn-primary">Retry Same Quiz</button>
+                <button onclick="goBackToHome()" class="btn-secondary">Choose New Category</button>
+            </div>
+            
+            <!-- Review answers (simple list) -->
+            <div class="review-section">
+                <h3>Your Answers</h3>
+                <div id="review-list" class="review-list">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
