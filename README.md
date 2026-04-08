@@ -66,6 +66,8 @@ This project demonstrates strong problem-solving skills, attention to user exper
 
 **Made with ❤️ by Ashwini Hosamani**
 
+*Live Demo*: https://ashwini-hosamani.github.io/INTERACTIVE-QUIZ-APPLICATION/  
+*GitHub Repository*: https://github.com/ashwini-hosamani/INTERACTIVE-QUIZ-APPLICATION
 
 ##OUTPUT 
 
